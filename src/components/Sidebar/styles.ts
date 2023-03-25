@@ -4,6 +4,8 @@ export const SidebarContainer = styled.aside`
 	max-width: 10.9375rem;
 	width: 100%;
 
+	height: 100vh;
+
 	padding-left: 2.1875rem;
 	padding-top: 2rem;
 

@@ -2,6 +2,10 @@ import type { ReactElement } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { DefaultLayout } from '~/layouts/default';
+import { Boards } from '~/pages/Boards';
+import { Reports } from '~/pages/Reports';
+import { Settings } from '~/pages/Settings';
+import { Teams } from '~/pages/Teams';
 
 export function Router(): ReactElement {
 	return (
@@ -12,12 +16,22 @@ export function Router(): ReactElement {
 			>
 				<Route
 					path="/boards"
-					element={<h1>Boards</h1>}
+					element={<Boards />}
 				/>
 
 				<Route
 					path="/teams"
-					element={<h1>Equipes</h1>}
+					element={<Teams />}
+				/>
+
+				<Route
+					path="/reports"
+					element={<Reports />}
+				/>
+
+				<Route
+					path="/settings"
+					element={<Settings />}
 				/>
 			</Route>
 		</Routes>

@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
     
     body{
         background-color: ${({ theme }) => theme['purple']};
-        color: ${({ theme }) => theme['gray']};
+        color: ${({ theme }) => theme['white']};
         --webkit-font-smoothing: antialiased;
 
         /*  */
@@ -28,7 +28,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     body, input, textarea, button{
-        font: 400 1rem 'Nunito', sans-serif;
+        font: 400 1rem 'Inter', sans-serif;
     }
     @media (max-width: 768px) {
       html {

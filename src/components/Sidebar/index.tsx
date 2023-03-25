@@ -1,4 +1,4 @@
-import { DeviceTabletSpeaker, Users } from 'phosphor-react';
+import { DeviceTabletSpeaker, FileText, GearSix, Users } from 'phosphor-react';
 import type { ReactElement } from 'react';
 
 import { Logo } from '~/assets';
@@ -27,6 +27,18 @@ export function Sidebar(): ReactElement {
 					to="/teams"
 					label="Equipes"
 					Icon={Users}
+				/>
+
+				<LinkButton
+					to="/reports"
+					label="Relatórios"
+					Icon={FileText}
+				/>
+
+				<LinkButton
+					to="/settings"
+					label="Ajustes"
+					Icon={GearSix}
 				/>
 			</SidebarMenu>
 		</SidebarContainer>

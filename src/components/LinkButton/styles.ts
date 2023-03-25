@@ -8,7 +8,7 @@ export const ButtonLinkContainer = styled(NavLink)`
 	align-items: center;
 	gap: 1rem;
 	text-decoration: none;
-	color: ${({ theme }) => theme.white};
+	color: ${({ theme }) => theme['gray-02']};
 	border: 1px solid transparent;
 
 	span {
@@ -17,11 +17,11 @@ export const ButtonLinkContainer = styled(NavLink)`
 		line-height: 1.25;
 	}
 
-	&:hover {
-		border-color: ${({ theme }) => theme.white};
+	&.active {
+		color: ${({ theme }) => theme.white};
 	}
 
-	&.active {
-		color: ${({ theme }) => theme.gray};
+	&.active > span {
+		font-weight: 700;
 	}
 `;
