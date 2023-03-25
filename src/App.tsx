@@ -1,43 +1,17 @@
 import type { ReactElement } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
-import { AvatarImage } from './assets';
-import { Avatar } from './components/Avatar';
-import { AppContainer, AvatarContainer } from './styles';
+import { Router } from './routes';
+import { GlobalStyle } from './styles/global';
 import { defaultTheme } from './styles/themes/default';
-import { GlobalStyle } from './styles/themes/global';
 
 export function App(): ReactElement {
 	return (
 		<ThemeProvider theme={defaultTheme}>
-			<AppContainer>
-				<AvatarContainer>
-					<Avatar
-						size={150}
-						src={AvatarImage}
-						alt="Avatar indiocode"
-					/>
-					<a
-						href="http://www.instagram.com/indiocode"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						@indiocode
-					</a>
-				</AvatarContainer>
-
-				<div>
-					<h1>React Vite Boilerplate</h1>
-					<a
-						href="http://www.github.com/indiocode/react-vite-boilerplate"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						on github
-					</a>
-				</div>
-			</AppContainer>
-
+			<BrowserRouter>
+				<Router />
+			</BrowserRouter>
 			<GlobalStyle />
 		</ThemeProvider>
 	);
