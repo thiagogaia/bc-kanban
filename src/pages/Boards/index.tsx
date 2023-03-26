@@ -3,6 +3,7 @@ import type { ReactElement } from 'react';
 
 import { Profile } from '~/assets';
 import { BoxBoard } from '~/components/BoxBoard';
+import { DataListMock } from '~/mock/data';
 
 import {
 	BoardsContainer,
@@ -55,9 +56,18 @@ export function Boards(): ReactElement {
 			</BoxSearchFilter>
 
 			<BoxBoards>
-				<BoxBoard title="todo" />
-				<BoxBoard title="doing" />
-				<BoxBoard title="done" />
+				<BoxBoard
+					title="todo"
+					data={DataListMock.filter((data) => data.status === 'todo')}
+				/>
+				<BoxBoard
+					title="doing"
+					data={DataListMock.filter((data) => data.status === 'doing')}
+				/>
+				<BoxBoard
+					title="done"
+					data={DataListMock.filter((data) => data.status === 'done')}
+				/>
 			</BoxBoards>
 		</BoardsContainer>
 	);

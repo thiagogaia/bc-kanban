@@ -1,20 +1,24 @@
 import type { ReactElement } from 'react';
 
+import type { DataList } from '~/models/DataList';
+
 import { CardContainer, Tags } from './styles';
 
-export function Card(): ReactElement {
+interface CardProps {
+	data: DataList;
+}
+
+export function Card({ data }: CardProps): ReactElement {
 	return (
 		<CardContainer>
-			<h2>Conferir o novo desafio 🚀 </h2>
+			<h2>{data.title}</h2>
 
-			<p>
-				Conferir o novo projeto do #boraCodar para fazê-lo da melhor maneira
-				possível
-			</p>
+			<p>{data.content}</p>
 
 			<Tags>
-				<span>rocketseat</span>
-				<span>desafio</span>
+				{data.tags.map((item) => (
+					<span key={item.id}>{item.name}</span>
+				))}
 			</Tags>
 		</CardContainer>
 	);

@@ -2,7 +2,6 @@
 import styled from 'styled-components';
 
 export const CardContainer = styled.div`
-	flex: 1;
 	background: ${({ theme }) => theme['white-01']};
 	box-shadow: 0px 4px 16px #eae2fd;
 	border-radius: 8px;
@@ -38,5 +37,6 @@ export const Tags = styled.div`
 		font-weight: 500;
 		font-size: 0.6875rem;
 		line-height: 1.3;
+		border-radius: 8px;
 	}
 `;
