@@ -1,9 +1,18 @@
-import { PencilSimple } from 'phosphor-react';
+import { FunnelSimple, MagnifyingGlass, PencilSimple } from 'phosphor-react';
 import type { ReactElement } from 'react';
 
 import { Profile } from '~/assets';
+import { BoxBoard } from '~/components/BoxBoard';
 
-import { BoardsContainer, Header, TitleContent } from './styles';
+import {
+	BoardsContainer,
+	BoxBoards,
+	BoxSearchFilter,
+	ButtonFilter,
+	Header,
+	Search,
+	TitleContent,
+} from './styles';
 
 export function Boards(): ReactElement {
 	return (
@@ -26,10 +35,30 @@ export function Boards(): ReactElement {
 					alt="Profile Image"
 				/>
 			</Header>
-			{/* 
-      <BoxFilter>
-        <button>Filtrar</button>
-      </BoxFilter> */}
+
+			<BoxSearchFilter>
+				<ButtonFilter>
+					<FunnelSimple
+						size={24}
+						weight="bold"
+					/>
+					Filtrar
+				</ButtonFilter>
+
+				<Search>
+					<input
+						type="text"
+						placeholder="Busque por cards, assuntos ou responsáveis..."
+					/>
+					<MagnifyingGlass size={24} />
+				</Search>
+			</BoxSearchFilter>
+
+			<BoxBoards>
+				<BoxBoard title="todo" />
+				<BoxBoard title="doing" />
+				<BoxBoard title="done" />
+			</BoxBoards>
 		</BoardsContainer>
 	);
 }

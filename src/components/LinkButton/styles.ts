@@ -3,13 +3,14 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const ButtonLinkContainer = styled(NavLink)`
+	flex: 1;
+	width: 10.9375rem;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
 	gap: 1rem;
 	text-decoration: none;
 	color: ${({ theme }) => theme['gray-02']};
-	border: 1px solid transparent;
 
 	span {
 		font-weight: 500;

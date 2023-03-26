@@ -20,13 +20,18 @@ export const GlobalStyle = createGlobalStyle`
         background-color: ${({ theme }) => theme['purple']};
         color: ${({ theme }) => theme['white']};
         --webkit-font-smoothing: antialiased;
-
-        /*  */
-        height: 100vh;
-        width: 100%;
-        /*  */
     }
     
+    ::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: ${(props) => props.theme['gray-02']};
+      border-radius: 999px;
+    }
+
     body, input, textarea, button{
         font: 400 1rem 'Inter', sans-serif;
     }

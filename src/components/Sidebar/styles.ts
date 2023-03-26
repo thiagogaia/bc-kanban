@@ -1,11 +1,8 @@
 import styled from 'styled-components';
 
 export const SidebarContainer = styled.aside`
-	max-width: 10.9375rem;
-	width: 100%;
-
-	height: 100vh;
-
+	min-width: 10.9375rem;
+	height: 100%;
 	padding-left: 2.1875rem;
 	padding-top: 2rem;
 

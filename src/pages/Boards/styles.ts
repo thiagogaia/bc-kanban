@@ -3,20 +3,21 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const BoardsContainer = styled(motion.section)`
-	flex: 1;
-	background: ${({ theme }) => theme.white};
-	margin-top: 0.25rem;
-	padding-top: 3rem;
-	padding-left: 2rem;
-	padding-right: 2rem;
-	border-top-left-radius: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	height: 100%;
+	width: 100%;
 `;
 
 export const Header = styled.div`
-	flex: 1;
 	display: flex;
 	justify-content: space-between;
-	padding: 0 1.5rem;
+
+	img {
+		width: 4rem;
+		height: 4rem;
+	}
 `;
 
 export const TitleContent = styled.div`
@@ -34,4 +35,55 @@ export const TitleContent = styled.div`
 	svg {
 		color: ${({ theme }) => theme['gray-03']};
 	}
+`;
+
+export const BoxSearchFilter = styled.div`
+	display: flex;
+	gap: 1rem;
+`;
+
+export const Search = styled.div`
+	flex: 1;
+	position: relative;
+
+	input {
+		width: 100%;
+		height: 3rem;
+		padding-left: 3.625rem;
+		border-radius: 8px;
+		border: 0.7px solid ${({ theme }) => theme['gray-04']};
+		box-shadow: 0px 4px 16px rgba(22, 22, 22, 0.1);
+	}
+
+	svg {
+		position: absolute;
+		left: 24px;
+		top: 12px;
+		color: ${({ theme }) => theme['gray-05']};
+	}
+`;
+
+export const ButtonFilter = styled.button`
+	height: 3rem;
+	width: 8.4375rem;
+	border-radius: 5px;
+	border: 0;
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	background: ${({ theme }) => theme.purple};
+	color: ${({ theme }) => theme.white};
+	font-weight: 400;
+	font-size: 0.875rem;
+`;
+
+export const BoxBoards = styled.div`
+	flex: 1;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	gap: 3rem;
+	overflow: auto;
 `;
