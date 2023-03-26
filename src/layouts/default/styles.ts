@@ -7,7 +7,7 @@ export const LayoutContainer = styled.div`
 
 export const ViewBoard = styled.main`
 	flex: 1;
-	background: ${({ theme }) => theme.white};
+	background: ${({ theme }) => theme['white-02']};
 	margin-top: 0.25rem;
 	padding-top: 3rem;
 	padding-left: 2rem;

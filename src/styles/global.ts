@@ -13,12 +13,12 @@ export const GlobalStyle = createGlobalStyle`
     
     :focus{
         outline: 0;
-        box-shadow: 0 0 0 1px ${({ theme }) => theme['purple']};
+        box-shadow: 0 0 0 1px ${({ theme }) => theme['purple-01']};
     }
     
     body{
-        background-color: ${({ theme }) => theme['purple']};
-        color: ${({ theme }) => theme['white']};
+        background-color: ${({ theme }) => theme['purple-01']};
+        color: ${({ theme }) => theme['white-01']};
         --webkit-font-smoothing: antialiased;
     }
     

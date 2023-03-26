@@ -13,6 +13,7 @@ export const BoardsContainer = styled(motion.section)`
 export const Header = styled.div`
 	display: flex;
 	justify-content: space-between;
+	padding: 0 1.5rem;
 
 	img {
 		width: 4rem;
@@ -40,6 +41,7 @@ export const TitleContent = styled.div`
 export const BoxSearchFilter = styled.div`
 	display: flex;
 	gap: 1rem;
+	padding: 0 1.5rem;
 `;
 
 export const Search = styled.div`
@@ -73,8 +75,8 @@ export const ButtonFilter = styled.button`
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	background: ${({ theme }) => theme.purple};
-	color: ${({ theme }) => theme.white};
+	background: ${({ theme }) => theme['purple-01']};
+	color: ${({ theme }) => theme['white-01']};
 	font-weight: 400;
 	font-size: 0.875rem;
 `;
@@ -85,5 +87,5 @@ export const BoxBoards = styled.div`
 	width: 100%;
 	display: flex;
 	gap: 3rem;
-	overflow: auto;
+	overflow-y: hidden;
 `;

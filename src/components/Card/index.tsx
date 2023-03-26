@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 
-import { CardContainer } from './styles';
+import { CardContainer, Tags } from './styles';
 
 export function Card(): ReactElement {
 	return (
@@ -11,6 +11,11 @@ export function Card(): ReactElement {
 				Conferir o novo projeto do #boraCodar para fazê-lo da melhor maneira
 				possível
 			</p>
+
+			<Tags>
+				<span>rocketseat</span>
+				<span>desafio</span>
+			</Tags>
 		</CardContainer>
 	);
 }

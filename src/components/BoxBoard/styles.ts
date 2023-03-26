@@ -2,10 +2,9 @@
 import styled from 'styled-components';
 
 export const BoxBoardContainer = styled.div`
-	height: 100%;
 	min-width: 23.0206rem;
 	width: 100%;
-	overflow-y: auto;
+	overflow-y: hidden;
 
 	h1 {
 		color: ${({ theme }) => theme['gray-01']};
@@ -20,6 +19,9 @@ export const Cards = styled.div`
 	flex-direction: column;
 	gap: 24px;
 	padding: 0 24px;
+	height: 100%;
+	overflow-y: auto;
+	max-height: 35.25rem;
 `;
 
 export const BoxTitle = styled.div`

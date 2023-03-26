@@ -19,7 +19,7 @@ export const ButtonLinkContainer = styled(NavLink)`
 	}
 
 	&.active {
-		color: ${({ theme }) => theme.white};
+		color: ${({ theme }) => theme['white-01']};
 	}
 
 	&.active > span {

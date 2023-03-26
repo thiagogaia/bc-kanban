@@ -27,6 +27,13 @@ export function BoxBoard({ title }: BoxBoardProps): ReactElement {
 				<Card />
 				<Card />
 				<Card />
+				<Card />
+				<Card />
+				<Card />
+				<Card />
+				<Card />
+
+				<Card />
 			</Cards>
 		</BoxBoardContainer>
 	);
