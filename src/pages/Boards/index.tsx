@@ -26,6 +26,10 @@ export function Boards(): ReactElement {
 					alt="Profile Image"
 				/>
 			</Header>
+			{/* 
+      <BoxFilter>
+        <button>Filtrar</button>
+      </BoxFilter> */}
 		</BoardsContainer>
 	);
 }

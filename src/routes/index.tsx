@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { DefaultLayout } from '~/layouts/default';
 import { Boards } from '~/pages/Boards';
@@ -14,6 +14,16 @@ export function Router(): ReactElement {
 				path="/"
 				element={<DefaultLayout />}
 			>
+				<Route
+					path="/"
+					element={<Navigate to="/boards" />}
+				/>
+
+				<Route
+					path="*"
+					element={<Navigate to="/boards" />}
+				/>
+
 				<Route
 					path="/boards"
 					element={<Boards />}
