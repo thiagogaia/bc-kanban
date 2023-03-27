@@ -1,16 +1,24 @@
 import type { ReactElement } from 'react';
 
-import type { DataList } from '~/models/DataList';
+import { useDragAndDrop } from '~/hooks/useDragAndDrop';
+import type { DataItem } from '~/models/DataList';
 
 import { CardContainer, Tags } from './styles';
 
 interface CardProps {
-	data: DataList;
+	data: DataItem;
 }
 
 export function Card({ data }: CardProps): ReactElement {
+	const { isDragging, ref } = useDragAndDrop<HTMLDivElement>({
+		task: data,
+	});
+
 	return (
-		<CardContainer>
+		<CardContainer
+			ref={ref}
+			isDragging={isDragging}
+		>
 			<h2>{data.title}</h2>
 
 			<p>{data.content}</p>

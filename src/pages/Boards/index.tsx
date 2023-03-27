@@ -1,9 +1,10 @@
 import { FunnelSimple, MagnifyingGlass, PencilSimple } from 'phosphor-react';
-import type { ReactElement } from 'react';
+import type { ChangeEvent, ReactElement } from 'react';
+import { useState } from 'react';
 
 import { Profile } from '~/assets';
 import { BoxBoard } from '~/components/BoxBoard';
-import { DataListMock } from '~/mock/data';
+import { useCards } from '~/hooks/useCards';
 
 import {
 	BoardsContainer,
@@ -16,6 +17,13 @@ import {
 } from './styles';
 
 export function Boards(): ReactElement {
+	const { doingCards, doneCards, todoCards } = useCards();
+	const [query, setQuery] = useState<string>('');
+
+	function handleSearch(event: ChangeEvent<HTMLInputElement>): void {
+		setQuery(event.target.value);
+	}
+
 	return (
 		<BoardsContainer
 			initial={{ opacity: 0 }}
@@ -50,6 +58,8 @@ export function Boards(): ReactElement {
 					<input
 						type="text"
 						placeholder="Busque por cards, assuntos ou responsáveis..."
+						value={query}
+						onChange={handleSearch}
 					/>
 					<MagnifyingGlass size={24} />
 				</Search>
@@ -57,16 +67,19 @@ export function Boards(): ReactElement {
 
 			<BoxBoards>
 				<BoxBoard
-					title="todo"
-					data={DataListMock.filter((data) => data.status === 'todo')}
+					column="todo"
+					data={todoCards}
+					search={query}
 				/>
 				<BoxBoard
-					title="doing"
-					data={DataListMock.filter((data) => data.status === 'doing')}
+					column="doing"
+					data={doingCards}
+					search={query}
 				/>
 				<BoxBoard
-					title="done"
-					data={DataListMock.filter((data) => data.status === 'done')}
+					column="done"
+					data={doneCards}
+					search={query}
 				/>
 			</BoxBoards>
 		</BoardsContainer>

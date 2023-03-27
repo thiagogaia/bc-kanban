@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import type { DataList } from '~/models/DataList';
+import type { DataItem } from '~/models/DataList';
 
-export const DataListMock: DataList[] = [
+export const DataListMock: DataItem[] = [
 	{
 		id: uuidv4(),
 		title: '#boraCodar um Kanban 🧑‍💻',

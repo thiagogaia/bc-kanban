@@ -5,10 +5,16 @@ export interface Tag {
 	name: string;
 }
 
-export interface DataList {
+export interface DataItem {
 	id?: string;
 	title: string;
 	status: DataStatus;
 	content: string;
 	tags: Tag[];
+}
+
+export interface DragItem {
+	// index: number;
+	id: DataItem['id'];
+	from: DataStatus;
 }

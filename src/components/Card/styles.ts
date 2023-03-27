@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const CardContainer = styled.div`
+interface CardContainerProps {
+	isDragging: boolean;
+}
+
+export const CardContainer = styled.div<CardContainerProps>`
 	background: ${({ theme }) => theme['white-01']};
 	box-shadow: 0px 4px 16px #eae2fd;
 	border-radius: 8px;
@@ -10,6 +14,7 @@ export const CardContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
+	border: 2px solid transparent;
 
 	h2 {
 		font-weight: 700;
@@ -24,6 +29,21 @@ export const CardContainer = styled.div`
 		line-height: 1.3;
 		color: ${({ theme }) => theme['gray-06']};
 	}
+
+	${({ isDragging }) =>
+		isDragging &&
+		css`
+			border: 2px dashed rgba(0, 0, 0, 0.2);
+			box-shadow: none;
+			background: transparent;
+			/* opacity: 0.3; */
+
+			h2,
+			p,
+			span {
+				opacity: 0;
+			}
+		`}
 `;
 
 export const Tags = styled.div`
