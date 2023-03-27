@@ -11,6 +11,7 @@ export interface BoardContextType {
 	doneCards: DataItem[];
 	dropItem: (data: MoveProps) => void;
 	addItem: (data: DataItem) => void;
+	removeItem: (item: DataItem) => void;
 }
 
 interface BoardContextProps {
@@ -39,8 +40,6 @@ export function BoardContextProvider({
 	});
 
 	function addItem(data: DataItem): void {
-		console.log(data);
-
 		setCards((state) => [data, ...state]);
 	}
 
@@ -62,6 +61,10 @@ export function BoardContextProvider({
 		[cards],
 	);
 
+	function removeItem(item: DataItem): void {
+		setCards((state) => state.filter((card) => card.id !== item.id));
+	}
+
 	const todoCards = cards.filter((card) => card.status === 'todo');
 	const doingCards = cards.filter((card) => card.status === 'doing');
 	const doneCards = cards.filter((card) => card.status === 'done');
@@ -82,6 +85,7 @@ export function BoardContextProvider({
 			value={{
 				dropItem,
 				addItem,
+				removeItem,
 				todoCards,
 				doingCards,
 				doneCards,

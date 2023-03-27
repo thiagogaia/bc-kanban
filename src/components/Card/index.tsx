@@ -1,5 +1,7 @@
+import { Trash } from 'phosphor-react';
 import type { ReactElement } from 'react';
 
+import { useCards } from '~/hooks/useCards';
 import { useDragAndDrop } from '~/hooks/useDragAndDrop';
 import type { DataItem } from '~/models/DataList';
 
@@ -10,6 +12,8 @@ interface CardProps {
 }
 
 export function Card({ data }: CardProps): ReactElement {
+	const { removeItem } = useCards();
+
 	const { isDragging, ref } = useDragAndDrop<HTMLDivElement>({
 		task: data,
 	});
@@ -19,6 +23,13 @@ export function Card({ data }: CardProps): ReactElement {
 			ref={ref}
 			isDragging={isDragging}
 		>
+			{!(data.status === 'done') && (
+				<Trash
+					size={20}
+					weight="bold"
+					onClick={(): void => removeItem(data)}
+				/>
+			)}
 			<h2>{data.title}</h2>
 
 			<p>{data.content}</p>

@@ -40,6 +40,18 @@ export const BoxHeader = styled.div`
 	padding: 1.5rem;
 	display: flex;
 	justify-content: space-between;
+
+	svg {
+		color: ${({ theme }) => theme['purple-01']};
+		cursor: pointer;
+		border-radius: 4px;
+
+		&:hover {
+			background: ${({ theme }) => theme['purple-01']};
+			color: ${({ theme }) => theme['white-01']};
+			transition: background-color 0.2s, color 0.2s;
+		}
+	}
 `;
 
 export const Form = styled.form`

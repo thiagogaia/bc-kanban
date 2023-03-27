@@ -6,6 +6,7 @@ interface CardContainerProps {
 }
 
 export const CardContainer = styled.div<CardContainerProps>`
+	position: relative;
 	background: ${({ theme }) => theme['white-01']};
 	box-shadow: 0px 4px 16px #eae2fd;
 	border-radius: 8px;
@@ -15,6 +16,14 @@ export const CardContainer = styled.div<CardContainerProps>`
 	flex-direction: column;
 	gap: 10px;
 	border: 2px solid transparent;
+
+	svg {
+		position: absolute;
+		top: 0.5rem;
+		right: 0.5em;
+		color: ${({ theme }) => theme['purple-01']};
+		cursor: pointer;
+	}
 
 	h2 {
 		font-weight: 700;
@@ -33,7 +42,7 @@ export const CardContainer = styled.div<CardContainerProps>`
 	${({ isDragging }) =>
 		isDragging &&
 		css`
-			border: 2px dashed rgba(0, 0, 0, 0.2);
+			border: 2px dashed ${({ theme }) => theme['purple-02']};
 			box-shadow: none;
 			background: transparent;
 			/* opacity: 0.3; */
