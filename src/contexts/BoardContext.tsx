@@ -10,6 +10,7 @@ export interface BoardContextType {
 	doingCards: DataItem[];
 	doneCards: DataItem[];
 	dropItem: (data: MoveProps) => void;
+	addItem: (data: DataItem) => void;
 }
 
 interface BoardContextProps {
@@ -36,6 +37,12 @@ export function BoardContextProvider({
 
 		return JSON.parse(storageData);
 	});
+
+	function addItem(data: DataItem): void {
+		console.log(data);
+
+		setCards((state) => [data, ...state]);
+	}
 
 	const dropItem = useCallback(
 		(data: MoveProps) => {
@@ -74,6 +81,7 @@ export function BoardContextProvider({
 		<BoardContext.Provider
 			value={{
 				dropItem,
+				addItem,
 				todoCards,
 				doingCards,
 				doneCards,
